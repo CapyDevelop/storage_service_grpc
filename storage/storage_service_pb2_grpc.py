@@ -15,7 +15,7 @@ class StorageServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Put = channel.unary_unary(
-                '/storage.StorageService/Put',
+                '/storage_service.StorageService/Put',
                 request_serializer=storage__service__pb2.PutRequest.SerializeToString,
                 response_deserializer=storage__service__pb2.PutResponse.FromString,
                 )
@@ -41,7 +41,7 @@ def add_StorageServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'storage.StorageService', rpc_method_handlers)
+            'storage_service.StorageService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -60,7 +60,7 @@ class StorageService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/storage.StorageService/Put',
+        return grpc.experimental.unary_unary(request, target, '/storage_service.StorageService/Put',
             storage__service__pb2.PutRequest.SerializeToString,
             storage__service__pb2.PutResponse.FromString,
             options, channel_credentials,
