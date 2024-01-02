@@ -1,0 +1,1 @@
+python -m grpc_tools.protoc -I. --python_out=./storage_service --grpc_python_out=./storage_service storage_service.proto

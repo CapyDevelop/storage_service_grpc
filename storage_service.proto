@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package storage_service;
+
+service StorageService {
+//    rpc Get(GetRequest) returns (GetResponse) {}
+    rpc Put(PutRequest) returns (PutResponse) {}
+//    rpc Delete(DeleteRequest) returns (DeleteResponse) {}
+}
+
+message PutRequest {
+    string uuid = 1;
+    bytes data = 2;
+    string filename = 3;
+}
+
+message PutResponse {
+    int32 status = 1;
+    string description = 2;
+}
