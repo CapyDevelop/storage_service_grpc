@@ -4,7 +4,7 @@ package storage_service;
 
 service StorageService {
 //    rpc Get(GetRequest) returns (GetResponse) {}
-    rpc Put(PutRequest) returns (PutResponse) {}
+    rpc Put(stream PutRequest) returns (PutResponse) {}
 //    rpc Delete(DeleteRequest) returns (DeleteResponse) {}
 }
 

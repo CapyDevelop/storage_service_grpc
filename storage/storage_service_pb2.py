@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15storage_service.proto\x12\x0fstorage_service\":\n\nPutRequest\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x10\n\x08\x66ilename\x18\x03 \x01(\t\"2\n\x0bPutResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t2T\n\x0eStorageService\x12\x42\n\x03Put\x12\x1b.storage_service.PutRequest\x1a\x1c.storage_service.PutResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15storage_service.proto\x12\x0fstorage_service\":\n\nPutRequest\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x12\x10\n\x08\x66ilename\x18\x03 \x01(\t\"2\n\x0bPutResponse\x12\x0e\n\x06status\x18\x01 \x01(\x05\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t2V\n\x0eStorageService\x12\x44\n\x03Put\x12\x1b.storage_service.PutRequest\x1a\x1c.storage_service.PutResponse\"\x00(\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -26,5 +26,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_PUTRESPONSE']._serialized_start=102
   _globals['_PUTRESPONSE']._serialized_end=152
   _globals['_STORAGESERVICE']._serialized_start=154
-  _globals['_STORAGESERVICE']._serialized_end=238
+  _globals['_STORAGESERVICE']._serialized_end=240
 # @@protoc_insertion_point(module_scope)

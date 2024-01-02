@@ -14,7 +14,7 @@ class StorageServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Put = channel.unary_unary(
+        self.Put = channel.stream_unary(
                 '/storage_service.StorageService/Put',
                 request_serializer=storage__service__pb2.PutRequest.SerializeToString,
                 response_deserializer=storage__service__pb2.PutResponse.FromString,
@@ -24,7 +24,7 @@ class StorageServiceStub(object):
 class StorageServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def Put(self, request, context):
+    def Put(self, request_iterator, context):
         """rpc Get(GetRequest) returns (GetResponse) {}
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -34,7 +34,7 @@ class StorageServiceServicer(object):
 
 def add_StorageServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Put': grpc.unary_unary_rpc_method_handler(
+            'Put': grpc.stream_unary_rpc_method_handler(
                     servicer.Put,
                     request_deserializer=storage__service__pb2.PutRequest.FromString,
                     response_serializer=storage__service__pb2.PutResponse.SerializeToString,
@@ -50,7 +50,7 @@ class StorageService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def Put(request,
+    def Put(request_iterator,
             target,
             options=(),
             channel_credentials=None,
@@ -60,7 +60,7 @@ class StorageService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/storage_service.StorageService/Put',
+        return grpc.experimental.stream_unary(request_iterator, target, '/storage_service.StorageService/Put',
             storage__service__pb2.PutRequest.SerializeToString,
             storage__service__pb2.PutResponse.FromString,
             options, channel_credentials,
