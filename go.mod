@@ -1,4 +1,4 @@
-module storage_go
+module github.com/CapyDevelop/storage_service_grpc
 
 go 1.19
 
