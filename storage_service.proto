@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package storage_service;
 
+option go_package = "./storage_go";
+
 service StorageService {
 //    rpc Get(GetRequest) returns (GetResponse) {}
     rpc Put(stream PutRequest) returns (PutResponse) {}
